@@ -4,10 +4,29 @@ services:
   valheim_box64:
     image: ghcr.io/gornius/valheim_box64:latest
     environment:
-      - VALHEIM_SERVER_NAME=${SERVER_NAME:-GorniusValheimBox64}
-      - VALHEIM_WORLD_NAME=${WORLD_NAME:-Box64World}
-      - VALHEIM_PASSWORD=${PASSWORD:-box64pass}
-      - VALHEIM_ISPUBLIC=${ISPUBLIC:-0}
+      - VALHEIM_SERVER_NAME=${SERVER_NAME:-Scrublheim2026}
+      - VALHEIM_WORLD_NAME=${WORLD_NAME:-Scrublheim2026}
+      - VALHEIM_PASSWORD=${PASSWORD:-Scrubs2026}
+      - VALHEIM_ISPUBLIC=${ISPUBLIC:-1}
+      - VALHEIM_MAXPLAYERS=${MAXPLAYERS:-10}
+      - UPDATE_SERVER=${UPDATE_SERVER:-1}
+      - UPDATE_IF_IDLE=${UPDATE_IF_IDLE:-1}
+      - AUTO_BACKUP=${AUTO_BACKUP:-1}
+      - BACKUP_INTERVAL=${BACKUP_INTERVAL:-60}
+      - UPDATE_CRON=${UPDATE_CRON:-0 1 * * *}
+      - UPDATE_IF_IDLE=${UPDATE_IF_IDLE:-true}
+      - IDLE_TIMEOUT=${IDLE_TIMEOUT:-3600}
+      - RESTART_CRON=${RESTART_CRON:-10 5 * * *}
+      - RESTART_IF_IDLE=${RESTART_IF_IDLE:-true}
+      - TZ=${TZ:-UTC}
+      - BACKUPS=${BACKUPS:-true}
+      - BACKUP_CRON=${BACKUP_CRON:-5 * * * *}
+      - BACKUP_MAX_AGE=${BACKUP_MAX_AGE:-7}
+      - BACKUP_DIR=${BACKUP_DIR:-/config/backups}
+      - BACKUP_IF_IDLE=${BACKUP_IF_IDLE:-true}
+      - BACKUPS_ZIP=${BACKUPS_ZIP:-true}
+      - PRESET=${PRESET:-Hard}
+      - MODIFIER_RAIDS_RESOURCES_MUCHMORE=${MODIFIER_RAIDS_RESOURCES_MUCHMORE:-true}
     ports:
       - 2456:2456/udp
       - 2457:2457/udp
